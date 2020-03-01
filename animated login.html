@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Login Page</title>
+<link rel="stylesheet" href="css/lib1.css">
+ <script>
+function fileonsub()
+{
+var x=document.forms["my"]["usn"].value;
+if(x=="")
+{
+alert("usn must be filled out");
+return false;
+}
+y=document.forms["my"]["password"].value;
+if(y=="")
+{
+alert("password should not be empty");
+return false;
+}
+var uni=/^[4][a|A][b|B][0-9][0-9][a-zA-Z][a-zA-Z][0-9][0-9][0-9]/;
+if(document.forms["my"]["usn"].value.match(uni))
+{
+return true;
+}
+else
+{
+alert("enter correct usn\nwrite your full usn(10 digit) for example:4ab16cs001");
+return false;
+}
+}
+</script>
+</head>
+<body style="background-color:bisque;">
+<div class="container">
+  <div class="left-section">
+    <div class="header">
+      <h1 class="animation a1">Welcome!</h1>
+      <h4 class="animation a2">Log in.</h4>
+    </div>
+	<form name="my" method="post"  onsubmit="return fileonsub();" action="validation.php">
+    <div class="form">
+      <input type="text" class="form-field animation a3" placeholder="USN" name="usn" id="usn"/>
+      <input type="password" class="form-field animation a4" placeholder="Password" name="password" id="password"/>
+	  <p name="error" id="error"></p>
+      <p class="animation a5"><a href="registr.html">REGISTER</a></p>
+      <button type="submit" class="animation a6" value="login">LOGIN</button>
+    </div>
+	</form>
+  </div>
+  <div class="right-section"></div>
+</div>
+  
+</body>
+</html>
